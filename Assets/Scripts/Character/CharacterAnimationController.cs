@@ -28,7 +28,7 @@ public class CharacterAnimationController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		if (_rigidbody.velocity.y > 0)
+		if (_rigidbody.velocity.y > 0.1)
 		{
 			isJumping = true;
 		}
@@ -36,7 +36,7 @@ public class CharacterAnimationController : MonoBehaviour
 		{
 			isJumping = false;
 		}
-		if (_rigidbody.velocity.y < 0)
+		if (_rigidbody.velocity.y < -0.1)
 		{
 			isFalling = true;
 		}
@@ -44,10 +44,10 @@ public class CharacterAnimationController : MonoBehaviour
 		{
 			isFalling = false;
 		}
-		if (_rigidbody.velocity.x != 0)
+		if (Mathf.Abs(_rigidbody.velocity.x) > 0.1)
 		{
 			isMoving = true;
-			if (_rigidbody.velocity.x < 0)
+			if (_rigidbody.velocity.x < 0 ^ controller.IsGravityInverted)
 			{
 				isFliped = true;
 			}

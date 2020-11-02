@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7769350383914484592}
   - component: {fileID: 1570983065274638737}
   - component: {fileID: 4056288609103843205}
-  - component: {fileID: -4444678914230443646}
+  - component: {fileID: -4212452225215577684}
   m_Layer: 9
   m_Name: Spike
   m_TagString: Untagged
@@ -111,7 +111,7 @@ PolygonCollider2D:
     - - {x: -0.16, y: 0.16}
       - {x: -0.16, y: -0.16}
       - {x: 0.16380899, y: 0.0005515963}
---- !u!114 &-4444678914230443646
+--- !u!114 &-4212452225215577684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

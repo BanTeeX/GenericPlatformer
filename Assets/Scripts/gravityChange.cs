@@ -1,20 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class gravityChange : MonoBehaviour
+public class GravityChange : MonoBehaviour
 {
+	private IGravityChangeable gravityChangeable;
 
-	
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.CompareTag("Player"))
+		gravityChangeable = collision.GetComponent<IGravityChangeable>();
+		if (gravityChangeable != null)
 		{
-			GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().gravityScale *= -1; ;
-			GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().rotation += 180;
-			FindObjectOfType<CharacterMovement>().jumpForce *= -1;
+			gravityChangeable.OnGravityChange();
 		}
-	}
 
-	
+		//if (collision.CompareTag("Player"))
+		//{
+		//	GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().gravityScale *= -1;
+		//	GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().rotation += 180;
+		//	FindObjectOfType<CharacterMovement>().jumpForce *= -1;
+		//}
+	}
 }

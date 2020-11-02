@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -918086808223053933}
   - component: {fileID: 965410610320540308}
   m_Layer: 0
-  m_Name: PlayerPrefab
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 4413323114399914360}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dea0cb1d3a850b6478c63105fbc4f15f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -155,15 +155,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34040b121d5ac93418fc91d98a26a6e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGrounded: 0
-  jumpForce: 500
-  moveSpeed: 5
+  jumpForce: 650
+  moveSpeed: 7
   chceckGround: {fileID: 2487659326239681451}
   checkGroundRadius: 0.1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
   airControl: 1
+  moveSmooth: 0.05
 --- !u!114 &965410610320540308
 MonoBehaviour:
   m_ObjectHideFlags: 0
