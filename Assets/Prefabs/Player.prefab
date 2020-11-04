@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -155,15 +155,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34040b121d5ac93418fc91d98a26a6e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 650
-  moveSpeed: 7
+  jumpForce: 900
+  moveSpeed: 13
   chceckGround: {fileID: 2487659326239681451}
   checkGroundRadius: 0.1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
   airControl: 1
-  moveSmooth: 0.05
+  moveSmooth: 0.2
 --- !u!114 &965410610320540308
 MonoBehaviour:
   m_ObjectHideFlags: 0

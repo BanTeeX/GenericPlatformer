@@ -44,7 +44,7 @@ public class CharacterAnimationController : MonoBehaviour
 		{
 			isFalling = false;
 		}
-		if (Mathf.Abs(_rigidbody.velocity.x) > 0.1)
+		if (Mathf.Abs(_rigidbody.velocity.x) > 1.5)
 		{
 			isMoving = true;
 			if (_rigidbody.velocity.x < 0 ^ controller.IsGravityInverted)
