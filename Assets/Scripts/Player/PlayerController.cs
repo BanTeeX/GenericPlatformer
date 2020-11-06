@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable
+public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable, IMoveable
 {
-	[HideInInspector] public  bool isLocked;
+	[HideInInspector] public bool isLocked;
 	[HideInInspector] public bool isGrounded;
 	[HideInInspector] public bool isGravityInverted;
 	[HideInInspector] public bool isJumping;
@@ -58,20 +58,20 @@ public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable
 		}
 	}
 
-	public void Move(float horizontalVelocity)
+	public void Move(float speed)
 	{
 		if (isGrounded || airControl)
 		{
-			Vector2 targetVelocity = new Vector2(isLocked ? 0.0f : horizontalVelocity, _rigidbody.velocity.y);
+			Vector2 targetVelocity = new Vector2(isLocked ? 0.0f : speed, _rigidbody.velocity.y);
 			_rigidbody.velocity = Vector2.SmoothDamp(_rigidbody.velocity, targetVelocity, ref velocity, moveSmooth);
 		}
 	}
 
-	public void Jump(float jumpForce, float jumpScale = 1.0f)
+	public void Jump(float jumpForce)
 	{
 		if (isGrounded && !isLocked)
 		{
-			_rigidbody.AddForce(new Vector2(0, (isGravityInverted ? -1.0f : 1.0f) * jumpForce * jumpScale));
+			_rigidbody.AddForce(new Vector2(0.0f, (isGravityInverted ? -1.0f : 1.0f) * jumpForce));
 		}
 	}
 

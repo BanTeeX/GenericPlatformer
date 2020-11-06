@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 4413323114399914339}
   - component: {fileID: 4413323114399914340}
   - component: {fileID: 4413323114399914341}
-  - component: {fileID: 4413323114399914342}
-  - component: {fileID: 7597154180781013221}
-  - component: {fileID: 6086768252785827756}
+  - component: {fileID: 6641954168252833435}
   - component: {fileID: 4413323114399914343}
   - component: {fileID: -918086808223053933}
   - component: {fileID: 965410610320540308}
@@ -111,8 +109,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &4413323114399914342
-CircleCollider2D:
+--- !u!60 &6641954168252833435
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -125,40 +123,35 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.365
---- !u!58 &7597154180781013221
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4413323114399914360}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: dea0cb1d3a850b6478c63105fbc4f15f, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.11850603, y: -0.29626516}
-  serializedVersion: 2
-  m_Radius: 0.071937904
---- !u!58 &6086768252785827756
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4413323114399914360}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: dea0cb1d3a850b6478c63105fbc4f15f, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.11370173, y: -0.2978667}
-  serializedVersion: 2
-  m_Radius: 0.07514069
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.73, y: 0.73}
+    newSize: {x: 0.73, y: 0.73}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.29013482, y: 0.25462294}
+      - {x: 0.11451499, y: 0.3599731}
+      - {x: -0.116759226, y: 0.36248657}
+      - {x: -0.28478438, y: 0.2551078}
+      - {x: -0.32478446, y: 0.039865322}
+      - {x: -0.2845689, y: -0.19248658}
+      - {x: -0.1867592, y: -0.25483838}
+      - {x: -0.17719018, y: -0.34991914}
+      - {x: -0.11737229, y: -0.36498722}
+      - {x: -0.05141657, y: -0.34597784}
+      - {x: -0.046796374, y: -0.2703798}
+      - {x: 0.038884953, y: -0.27377337}
+      - {x: 0.040941272, y: -0.34337372}
+      - {x: 0.10948834, y: -0.36751345}
+      - {x: 0.17900315, y: -0.34799838}
+      - {x: 0.1840302, y: -0.2643722}
+      - {x: 0.28970367, y: -0.18453383}
+      - {x: 0.3274055, y: 0.034137905}
 --- !u!95 &4413323114399914343
 Animator:
   serializedVersion: 3
@@ -219,6 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8a389842ca18e44bc3604be353aa3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLocked: 0
   isGrounded: 0
   isGravityInverted: 0
   isJumping: 0
