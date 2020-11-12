@@ -227,6 +227,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _rigidbody: {fileID: 4413323114399914341}
+  GameStatus: {fileID: 4845117449874244834, guid: cda92b0388bfe33479ce4fe68f98ea5b,
+    type: 3}
 --- !u!1 &4729890973284532229
 GameObject:
   m_ObjectHideFlags: 0

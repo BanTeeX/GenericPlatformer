@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable,
 	[SerializeField] private float checkGroundRadius;
 	[SerializeField] private LayerMask whatIsGround;
 	[SerializeField] private Rigidbody2D _rigidbody;
+	[SerializeField] GameStatus GameStatus;
 
 	private Vector2 velocity = Vector2.zero;
 
@@ -77,6 +78,7 @@ public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable,
 
 	public void DestroyObject()
 	{
+		GameStatus.resetPoints();
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 

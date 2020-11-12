@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-   
+    [SerializeField] GameStatus GameStatus;
 
     public void LoadNextScene()
     {
@@ -15,6 +15,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadCurrentScene()
     {
+        GameStatus.resetPoints();
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }

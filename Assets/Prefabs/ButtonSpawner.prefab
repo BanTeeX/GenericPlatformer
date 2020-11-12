@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6237632161690669144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.269868, y: 2.3423357, z: -71.8526}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 5177496401363330953, guid: e4844ae27caf8d64fa8015d98bd557bd, type: 3}
+  GameStatus: {fileID: 4845117449874244834, guid: cda92b0388bfe33479ce4fe68f98ea5b,
+    type: 3}
