@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.AssetImporters;
 using UnityEngine;
 
-public class coinPicking : MonoBehaviour
+public class CoinPicking : MonoBehaviour
 {
     [SerializeField] GameStatus gameStatus;
 

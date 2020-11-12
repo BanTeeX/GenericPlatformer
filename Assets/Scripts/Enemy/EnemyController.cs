@@ -1,0 +1,81 @@
+﻿using UnityEngine;
+
+public class EnemyController : MonoBehaviour, IGravityChangeable, IJumpPadTrigger, IDestroyable
+{
+	[HideInInspector] public bool isGrounded;
+	[HideInInspector] public bool isGravityInverted;
+	[HideInInspector] public bool isJumping;
+	[HideInInspector] public bool isFalling;
+	[HideInInspector] public bool isMoving;
+	[HideInInspector] public bool isFliped;
+
+	[SerializeField] private float speed;
+	[SerializeField] private Transform chceckGround;
+	[SerializeField] private float checkGroundRadius;
+	[SerializeField] private LayerMask whatIsGround;
+	[SerializeField] private Rigidbody2D _rigidbody;
+	[SerializeField] private Transform sidesCheck;
+	[SerializeField] private float sidesCheckRadius;
+
+	private void FixedUpdate()
+	{
+		isGrounded = Physics2D.OverlapCircle(chceckGround.position, checkGroundRadius, whatIsGround);
+		if (Physics2D.Raycast(transform.position, isFliped ? Vector2.left : Vector2.right, GetComponent<SpriteRenderer>().bounds.size.x / 2, whatIsGround).collider)
+		{
+			speed *= -1;
+		}
+		_rigidbody.velocity = new Vector2(speed, _rigidbody.velocity.y);
+
+		if (_rigidbody.velocity.y > 0.1)
+		{
+			isJumping = true;
+		}
+		else
+		{
+			isJumping = false;
+		}
+		if (_rigidbody.velocity.y < -0.1)
+		{
+			isFalling = true;
+		}
+		else
+		{
+			isFalling = false;
+		}
+		if (Mathf.Abs(_rigidbody.velocity.x) > 0.1)
+		{
+			isMoving = true;
+			if (_rigidbody.velocity.x < 0 ^ isGravityInverted)
+			{
+				isFliped = true;
+			}
+			else
+			{
+				isFliped = false;
+			}
+		}
+		else
+		{
+			isMoving = false;
+		}
+	}
+
+	public void DestroyObject()
+	{
+		Destroy(gameObject);
+	}
+
+	public void OnGravityChange()
+	{
+		Debug.Log("G");
+		isGravityInverted = !isGravityInverted;
+		_rigidbody.gravityScale *= -1;
+		_rigidbody.rotation += 180;
+	}
+
+	public void OnJumpPadActivation(Vector2 jumpVector)
+	{
+		_rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
+		_rigidbody.AddForce(jumpVector);
+	}
+}
