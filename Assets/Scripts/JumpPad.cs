@@ -4,14 +4,15 @@ public class JumpPad : MonoBehaviour
 {
 	[SerializeField] private float jumpForce;
 
-	private IMoveable moveable;
+	private IJumpPadTrigger moveable;
 
-	public void OnTriggerStay2D(Collider2D collision)
+	public void OnTriggerEnter2D(Collider2D collision)
 	{
-		moveable = collision.GetComponent<IMoveable>();
+		moveable = collision.GetComponent<IJumpPadTrigger>();
 		if (moveable != null)
 		{
-			moveable.Jump(jumpForce);
+			Vector2 jumpVector = transform.rotation * Vector2.up * jumpForce;
+			moveable.OnJumpPadActivation(jumpVector);
 		}
 	}
 }

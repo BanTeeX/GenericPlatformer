@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable, IMoveable
+public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable, IJumpPadTrigger
 {
 	[HideInInspector] public bool isLocked;
 	[HideInInspector] public bool isGrounded;
@@ -85,5 +85,11 @@ public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable,
 		isGravityInverted = !isGravityInverted;
 		_rigidbody.gravityScale *= -1;
 		_rigidbody.rotation += 180;
+	}
+
+	public void OnJumpPadActivation(Vector2 jumpVector)
+	{
+		_rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
+		_rigidbody.AddForce(jumpVector);
 	}
 }
