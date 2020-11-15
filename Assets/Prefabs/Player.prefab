@@ -222,7 +222,7 @@ MonoBehaviour:
   moveSmooth: 0.2
   airControl: 1
   chceckGround: {fileID: 2487659326239681451}
-  checkGroundRadius: 0.2
+  checkGroundRadius: 0.15
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
