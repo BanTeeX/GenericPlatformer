@@ -285,7 +285,7 @@ MonoBehaviour:
   isFalling: 0
   isMoving: 0
   isFliped: 0
-  speed: 1
+  speed: 4
   chceckGround: {fileID: 1117292807638793731}
   checkGroundRadius: 0.2
   whatIsGround:

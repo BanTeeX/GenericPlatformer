@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable,
 	[SerializeField] private float moveSmooth = 0.2f;
 	[SerializeField] private bool airControl = true;
 	[SerializeField] private Transform chceckGround;
-	[SerializeField] private float checkGroundRadius;
+	[SerializeField] private float checkGroundRadius = 0.2f;
 	[SerializeField] private LayerMask whatIsGround;
 	[SerializeField] private Rigidbody2D _rigidbody;
 	[SerializeField] GameStatus GameStatus;

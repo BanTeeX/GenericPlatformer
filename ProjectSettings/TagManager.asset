@@ -16,7 +16,7 @@ TagManager:
   - 
   - Ground
   - Enemy
-  - 
+  - GameplayElement
   - 
   - 
   - 
@@ -45,10 +45,13 @@ TagManager:
   - name: Terrain
     uniqueID: 927691469
     locked: 0
+  - name: GameplayElement
+    uniqueID: 2989671941
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Enemies
+  - name: Enemy
     uniqueID: 1778387985
     locked: 0
   - name: Player

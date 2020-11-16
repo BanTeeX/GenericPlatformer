@@ -9,13 +9,11 @@ public class EnemyController : MonoBehaviour, IGravityChangeable, IJumpPadTrigge
 	[HideInInspector] public bool isMoving;
 	[HideInInspector] public bool isFliped;
 
-	[SerializeField] private float speed;
+	[SerializeField] private float speed = 4.0f;
 	[SerializeField] private Transform chceckGround;
-	[SerializeField] private float checkGroundRadius;
+	[SerializeField] private float checkGroundRadius = 0.2f;
 	[SerializeField] private LayerMask whatIsGround;
 	[SerializeField] private Rigidbody2D _rigidbody;
-	[SerializeField] private Transform sidesCheck;
-	[SerializeField] private float sidesCheckRadius;
 
 	private void FixedUpdate()
 	{
@@ -67,7 +65,6 @@ public class EnemyController : MonoBehaviour, IGravityChangeable, IJumpPadTrigge
 
 	public void OnGravityChange()
 	{
-		Debug.Log("G");
 		isGravityInverted = !isGravityInverted;
 		_rigidbody.gravityScale *= -1;
 		_rigidbody.rotation += 180;

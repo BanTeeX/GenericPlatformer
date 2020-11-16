@@ -2,7 +2,7 @@
 
 public class BulletDestroy : MonoBehaviour, IDestroyable
 {
-	[SerializeField] private float lifeTime = 10;
+	[SerializeField] private float lifeTime = 10.0f;
 
 	private float currentTime = 0;
 
