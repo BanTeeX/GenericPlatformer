@@ -1,17 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class ButtonSpawner : MonoBehaviour
 {   
-    [SerializeField] Canvas Canvas;
-    [SerializeField] GameStatus GameStatus;
+	[SerializeField] private Canvas Canvas;
+	[SerializeField] private GameStatus GameStatus;
 
-    public void spawnButton()
-    {
-        Instantiate(Canvas, Camera.main.transform.position, Quaternion.identity);
-        Instantiate(GameStatus, Camera.main.transform.position, Quaternion.identity);
-    }
-
+	public void SpawnButton()
+	{
+		Instantiate(Canvas, Camera.main.transform.position, Quaternion.identity);
+		Instantiate(GameStatus, Camera.main.transform.position, Quaternion.identity);
+	}
 }

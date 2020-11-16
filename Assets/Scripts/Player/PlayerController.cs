@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable,
 
 	public void DestroyObject()
 	{
-		GameStatus.resetPoints();
+		GameStatus.ResetPoints();
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 

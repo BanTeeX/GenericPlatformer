@@ -1,35 +1,25 @@
-﻿using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using TMPro;
 
 public class GameStatus : MonoBehaviour
 {
-    [SerializeField] int currentScore = 0;
-    [SerializeField] int pointsPerCoin = 10;
-    [SerializeField] TextMeshProUGUI scoreText;
-    // Start is called before the first frame update
-    void Start()
-    {
-        scoreText.text = currentScore.ToString();
-    }
+	[SerializeField] private int currentScore = 0;
+	[SerializeField] private int pointsPerCoin = 10;
+	[SerializeField] private TextMeshProUGUI scoreText;
 
-    // Update is called once per frame
-    void Update()
-    {
- 
-    }
+	private void Start()
+	{
+		scoreText.text = currentScore.ToString();
+	}
 
-    public void resetPoints() 
-    {
-        currentScore = 0;
-    }
+	public void ResetPoints() 
+	{
+		currentScore = 0;
+	}
 
-    public void AddToScore()
-    {
-        currentScore += pointsPerCoin;
-        scoreText.text = currentScore.ToString();
-    }
+	public void AddToScore()
+	{
+		currentScore += pointsPerCoin;
+		scoreText.text = currentScore.ToString();
+	}
 }
