@@ -11940,7 +11940,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &377984660
 MonoBehaviour:
@@ -17176,7 +17176,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1904309833
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 36653e10742c6f24c97ded4f2b574cff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -18005,7 +18005,7 @@ Transform:
   - {fileID: 404209217}
   - {fileID: 272825800}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &615408557
 PrefabInstance:
@@ -21934,7 +21934,7 @@ PrefabInstance:
     - target: {fileID: 1563907339014943251, guid: 2ac5d53c3566e66448829425967750c0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1563907339014943251, guid: 2ac5d53c3566e66448829425967750c0,
         type: 3}
@@ -25391,7 +25391,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 2147087912}
     m_Modifications:
     - target: {fileID: 7611496661271483133, guid: 7ed4f16923c990244bdcb939bd614545,
         type: 3}
@@ -25416,17 +25416,17 @@ PrefabInstance:
     - target: {fileID: 7849851881447665167, guid: 7ed4f16923c990244bdcb939bd614545,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7849851881447665167, guid: 7ed4f16923c990244bdcb939bd614545,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7849851881447665167, guid: 7ed4f16923c990244bdcb939bd614545,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7849851881447665167, guid: 7ed4f16923c990244bdcb939bd614545,
         type: 3}
@@ -25436,7 +25436,7 @@ PrefabInstance:
     - target: {fileID: 7849851881447665167, guid: 7ed4f16923c990244bdcb939bd614545,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 67
       objectReference: {fileID: 0}
     - target: {fileID: 7849851881447665167, guid: 7ed4f16923c990244bdcb939bd614545,
         type: 3}
@@ -25465,6 +25465,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ed4f16923c990244bdcb939bd614545, type: 3}
+--- !u!4 &901930362 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7849851881447665167, guid: 7ed4f16923c990244bdcb939bd614545,
+    type: 3}
+  m_PrefabInstance: {fileID: 901930361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &903115742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31618,7 +31624,7 @@ Transform:
   m_Children:
   - {fileID: 1576646737}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1152030713 stripped
 Transform:
@@ -33666,7 +33672,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1904309833
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 52ee2a76bd8b40c4ab62dcb23edafea7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -36167,7 +36173,7 @@ PrefabInstance:
     - target: {fileID: 4413323114399914339, guid: 168d555da814437448a76b010dddc373,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4413323114399914339, guid: 168d555da814437448a76b010dddc373,
         type: 3}
@@ -43715,7 +43721,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1904309833
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 52ee2a76bd8b40c4ab62dcb23edafea7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -60949,6 +60955,7 @@ Transform:
   - {fileID: 1530742664}
   - {fileID: 63177127}
   - {fileID: 807585894}
+  - {fileID: 901930362}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

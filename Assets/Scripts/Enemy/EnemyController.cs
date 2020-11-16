@@ -11,9 +11,12 @@ public class EnemyController : MonoBehaviour, IGravityChangeable, IJumpPadTrigge
 
 	[SerializeField] private float speed = 4.0f;
 	[SerializeField] private Transform chceckGround;
-	[SerializeField] private float checkGroundRadius = 0.2f;
+	[SerializeField] private float checkGroundRadius = 0.15f;
 	[SerializeField] private LayerMask whatIsGround;
 	[SerializeField] private Rigidbody2D _rigidbody;
+	[SerializeField] private float jumpSpeedTolerance = 0.1f;
+	[SerializeField] private float fallSpeedTolerance = 0.1f;
+	[SerializeField] private float speedTolerance = 0.1f;
 
 	private void FixedUpdate()
 	{

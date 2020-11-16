@@ -2,5 +2,5 @@
 
 public interface IJumpPadTrigger
 {
-    void OnJumpPadActivation(Vector2 jumpVector);
+	void OnJumpPadActivation(Vector2 jumpVector);
 }

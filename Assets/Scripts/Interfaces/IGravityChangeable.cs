@@ -1,4 +1,4 @@
 ﻿public interface IGravityChangeable
 {
-    void OnGravityChange();
+	void OnGravityChange();
 }

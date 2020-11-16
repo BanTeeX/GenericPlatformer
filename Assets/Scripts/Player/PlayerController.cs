@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable, IJumpPadTrigger
 {
@@ -17,7 +16,10 @@ public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable,
 	[SerializeField] private float checkGroundRadius = 0.2f;
 	[SerializeField] private LayerMask whatIsGround;
 	[SerializeField] private Rigidbody2D _rigidbody;
-	[SerializeField] GameStatus GameStatus;
+	[SerializeField] private float jumpSpeedTolerance = 0.1f;
+	[SerializeField] private float fallSpeedTolerance = 0.1f;
+	[SerializeField] private float moveSpeedTolerance = 1.5f;
+	[SerializeField] SceneLoader sceneLoader;
 
 	private Vector2 velocity = Vector2.zero;
 
@@ -25,7 +27,7 @@ public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable,
 	{
 		isGrounded = Physics2D.OverlapCircle(chceckGround.position, checkGroundRadius, whatIsGround);
 
-		if (_rigidbody.velocity.y > 0.1)
+		if (_rigidbody.velocity.y > jumpSpeedTolerance)
 		{
 			isJumping = true;
 		}
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable,
 		{
 			isJumping = false;
 		}
-		if (_rigidbody.velocity.y < -0.1)
+		if (_rigidbody.velocity.y < -fallSpeedTolerance)
 		{
 			isFalling = true;
 		}
@@ -41,7 +43,7 @@ public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable,
 		{
 			isFalling = false;
 		}
-		if (Mathf.Abs(_rigidbody.velocity.x) > 1.5)
+		if (Mathf.Abs(_rigidbody.velocity.x) > moveSpeedTolerance)
 		{
 			isMoving = true;
 			if (_rigidbody.velocity.x < 0 ^ isGravityInverted)
@@ -78,8 +80,7 @@ public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable,
 
 	public void DestroyObject()
 	{
-		GameStatus.ResetPoints();
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		sceneLoader.LoadCurrentScene();
 	}
 
 	public void OnGravityChange()

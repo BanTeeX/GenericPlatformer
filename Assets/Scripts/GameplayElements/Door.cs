@@ -2,14 +2,14 @@
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] ButtonSpawner buttonSpawner;
-    [SerializeField] GameObject Player;
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            buttonSpawner.SpawnButton();
-            Player.GetComponent<PlayerController>().isLocked = true;
-        }
-    }
+	[SerializeField] private MenuController menuController;
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.CompareTag("Player"))
+		{
+			menuController.ActivateMenu();
+			collision.GetComponent<PlayerController>().isLocked = true;
+		}
+	}
 }

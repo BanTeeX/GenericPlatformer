@@ -8,7 +8,7 @@ public class CoinPicking : MonoBehaviour
 	{
 		if (collision.CompareTag("Player"))
 		{
-			gameStatus.AddToScore();
+			gameStatus.AddPoint();
 			Destroy(gameObject);
 		}
 	}

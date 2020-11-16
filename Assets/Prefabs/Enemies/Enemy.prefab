@@ -287,11 +287,14 @@ MonoBehaviour:
   isFliped: 0
   speed: 4
   chceckGround: {fileID: 1117292807638793731}
-  checkGroundRadius: 0.2
+  checkGroundRadius: 0.15
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
   _rigidbody: {fileID: 8565770887576490039}
+  jumpSpeedTolerance: 0.1
+  fallSpeedTolerance: 0.1
+  speedTolerance: 0.1
 --- !u!114 &234297477878708611
 MonoBehaviour:
   m_ObjectHideFlags: 0
