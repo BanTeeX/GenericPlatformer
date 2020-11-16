@@ -8,7 +8,7 @@ public class Door : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            buttonSpawner.spawnButton();
+            buttonSpawner.SpawnButton();
             Player.GetComponent<PlayerController>().isLocked = true;
         }
     }
