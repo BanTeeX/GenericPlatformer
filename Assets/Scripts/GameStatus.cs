@@ -3,23 +3,33 @@ using TMPro;
 
 public class GameStatus : MonoBehaviour
 {
-	[SerializeField] private int currentScore = 0;
-	[SerializeField] private int pointsPerCoin = 10;
-	[SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] int currentScore = 0;
+    [SerializeField] int pointsPerCoin = 10;
+    //[SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] List<Sprite> List = new List<Sprite>();
+    [SerializeField] Image scores;
+    // Start is called before the first frame update
 
-	private void Start()
-	{
-		scoreText.text = currentScore.ToString();
-	}
+    void Awake()
+    {
+        //scores.GetComponent<Image>().sprite = List[0];
+    }
 
-	public void ResetPoints() 
-	{
-		currentScore = 0;
-	}
+    // Update is called once per frame
+    void Update()
+    {
+ 
+    }
 
-	public void AddToScore()
-	{
-		currentScore += pointsPerCoin;
-		scoreText.text = currentScore.ToString();
-	}
+    public void resetPoints() 
+    {
+        currentScore = 0;
+        scores.GetComponent<Image>().sprite = List[0];
+    }
+
+    public void AddToScore()
+    {
+        currentScore += pointsPerCoin;
+        scores.GetComponent<Image>().sprite = List[1];
+    }
 }

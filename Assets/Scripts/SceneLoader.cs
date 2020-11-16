@@ -5,11 +5,12 @@ public class SceneLoader : MonoBehaviour
 {
 	[SerializeField] private GameStatus GameStatus;
 
-	public void LoadNextScene()
-	{
-		int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-		SceneManager.LoadScene(currentSceneIndex + 1);
-	}
+    public void LoadNextScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
+        GameStatus.resetPoints();
+    }
 
 	public void LoadCurrentScene()
 	{
