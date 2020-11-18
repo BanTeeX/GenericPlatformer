@@ -18,14 +18,27 @@ public class EnemyController : MonoBehaviour, IGravityChangeable, IJumpPadTrigge
 	[SerializeField] private float fallSpeedTolerance = 0.1f;
 	[SerializeField] private float speedTolerance = 0.1f;
 
+	private bool wasOnGravityPad;
+
 	private void FixedUpdate()
 	{
-		isGrounded = Physics2D.OverlapCircle(chceckGround.position, checkGroundRadius, whatIsGround);
-		if (Physics2D.Raycast(transform.position, isFliped ? Vector2.left : Vector2.right, GetComponent<SpriteRenderer>().bounds.size.x / 2, whatIsGround).collider)
+		isGrounded = Physics2D.OverlapCircle(chceckGround.position, checkGroundRadius, whatIsGround) != null;
+		if (Physics2D.Raycast(transform.position, isFliped ^ isGravityInverted ? Vector2.left : Vector2.right, GetComponent<SpriteRenderer>().bounds.size.x / 2, whatIsGround).collider != null)
 		{
 			speed *= -1;
 		}
-		_rigidbody.velocity = new Vector2(speed, _rigidbody.velocity.y);
+		if (wasOnGravityPad == true && isGrounded == false)
+		{
+			_rigidbody.velocity = new Vector2(_rigidbody.velocity.x / 1.1f, _rigidbody.velocity.y);
+			if (isGrounded == true)
+			{
+				wasOnGravityPad = false;
+			}
+		}
+		else
+		{
+			_rigidbody.velocity = new Vector2(speed, _rigidbody.velocity.y);
+		}
 
 		if (_rigidbody.velocity.y > 0.1)
 		{
@@ -69,6 +82,7 @@ public class EnemyController : MonoBehaviour, IGravityChangeable, IJumpPadTrigge
 	public void OnGravityChange()
 	{
 		isGravityInverted = !isGravityInverted;
+		wasOnGravityPad = true;
 		_rigidbody.gravityScale *= -1;
 		_rigidbody.rotation += 180;
 	}
