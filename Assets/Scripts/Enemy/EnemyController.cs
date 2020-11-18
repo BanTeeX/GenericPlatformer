@@ -2,12 +2,13 @@
 
 public class EnemyController : MonoBehaviour, IGravityChangeable, IJumpPadTrigger, IDestroyable
 {
+	public bool isFliped;
+
 	[HideInInspector] public bool isGrounded;
 	[HideInInspector] public bool isGravityInverted;
 	[HideInInspector] public bool isJumping;
 	[HideInInspector] public bool isFalling;
 	[HideInInspector] public bool isMoving;
-	[HideInInspector] public bool isFliped;
 
 	[SerializeField] private float speed = 4.0f;
 	[SerializeField] private Transform chceckGround;
@@ -15,10 +16,17 @@ public class EnemyController : MonoBehaviour, IGravityChangeable, IJumpPadTrigge
 	[SerializeField] private LayerMask whatIsGround;
 	[SerializeField] private Rigidbody2D _rigidbody;
 	[SerializeField] private float jumpSpeedTolerance = 0.1f;
-	[SerializeField] private float fallSpeedTolerance = 0.1f;
 	[SerializeField] private float speedTolerance = 0.1f;
 
-	private bool wasOnGravityPad;
+	/*[SerializeField]*/ private bool wasOnGravityPad;
+
+	private void Start()
+	{
+		if (isFliped)
+		{
+			speed *= -1;
+		}
+	}
 
 	private void FixedUpdate()
 	{
@@ -40,7 +48,7 @@ public class EnemyController : MonoBehaviour, IGravityChangeable, IJumpPadTrigge
 			_rigidbody.velocity = new Vector2(speed, _rigidbody.velocity.y);
 		}
 
-		if (_rigidbody.velocity.y > 0.1)
+		if (_rigidbody.velocity.y > jumpSpeedTolerance)
 		{
 			isJumping = true;
 		}
@@ -48,7 +56,7 @@ public class EnemyController : MonoBehaviour, IGravityChangeable, IJumpPadTrigge
 		{
 			isJumping = false;
 		}
-		if (_rigidbody.velocity.y < -0.1)
+		if (_rigidbody.velocity.y < -jumpSpeedTolerance)
 		{
 			isFalling = true;
 		}
@@ -56,7 +64,7 @@ public class EnemyController : MonoBehaviour, IGravityChangeable, IJumpPadTrigge
 		{
 			isFalling = false;
 		}
-		if (Mathf.Abs(_rigidbody.velocity.x) > 0.1)
+		if (Mathf.Abs(_rigidbody.velocity.x) > speedTolerance)
 		{
 			isMoving = true;
 			if (_rigidbody.velocity.x < 0 ^ isGravityInverted)

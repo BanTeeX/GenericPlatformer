@@ -3,6 +3,7 @@
 public class JumpPad : MonoBehaviour
 {
 	[SerializeField] private float jumpForce;
+	[SerializeField] private AudioSource audioSource;
 
 	private IJumpPadTrigger moveable;
 
@@ -11,6 +12,7 @@ public class JumpPad : MonoBehaviour
 		moveable = collision.GetComponent<IJumpPadTrigger>();
 		if (moveable != null && collision.isTrigger == false)
 		{
+			audioSource.Play();
 			Vector2 jumpVector = transform.rotation * Vector2.up * jumpForce;
 			moveable.OnJumpPadActivation(jumpVector);
 		}
