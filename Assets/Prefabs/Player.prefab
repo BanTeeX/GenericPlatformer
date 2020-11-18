@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -38344137
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 815424164945274260, guid: ed5cec320ef7dc34a888ef30552d86d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -219,7 +219,7 @@ MonoBehaviour:
   isFalling: 0
   isMoving: 0
   isFliped: 0
-  moveSmooth: 0.2
+  moveSmooth: 0.15
   airControl: 1
   chceckGround: {fileID: 2487659326239681451}
   checkGroundRadius: 0.15
@@ -227,8 +227,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _rigidbody: {fileID: 4413323114399914341}
-  GameStatus: {fileID: 4845117449874244834, guid: cda92b0388bfe33479ce4fe68f98ea5b,
-    type: 3}
+  jumpSpeedTolerance: 0.1
+  fallSpeedTolerance: 0.1
+  moveSpeedTolerance: 1.5
+  sceneLoader: {fileID: 0}
 --- !u!1 &4729890973284532229
 GameObject:
   m_ObjectHideFlags: 0
