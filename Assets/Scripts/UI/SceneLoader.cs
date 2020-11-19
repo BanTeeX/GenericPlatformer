@@ -8,6 +8,19 @@ public class SceneLoader : MonoBehaviour
 	private void Start()
 	{
 		currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+		if (currentSceneIndex == 0)
+		{
+			Cursor.visible = true;
+		}
+	}
+
+	private void Update()
+	{
+		if (Input.GetButtonDown("Cancel") && currentSceneIndex != 0)
+		{
+			currentSceneIndex = 0;
+			SceneManager.LoadScene(currentSceneIndex);
+		}
 	}
 
 	public void LoadNextScene()

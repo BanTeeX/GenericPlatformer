@@ -6,11 +6,13 @@ public class MenuController : MonoBehaviour
 
 	private void Start()
 	{
+		Cursor.visible = false;
 		panel.SetActive(false);
 	}
 
 	public void ActivateMenu()
 	{
+		Cursor.visible = true;
 		panel.SetActive(true);
 	}
 }
