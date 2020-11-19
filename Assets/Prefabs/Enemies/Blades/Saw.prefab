@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1295331342914432477}
   - component: {fileID: 1295331342914432474}
   - component: {fileID: 1295331342914432475}
+  - component: {fileID: 4798808790554995348}
   - component: {fileID: 1295331342914432472}
   m_Layer: 9
   m_Name: Saw
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1778387985
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af2d5f6531a21134290f6baf2b9e7976, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -281,6 +282,25 @@ PolygonCollider2D:
       - {x: 0.22, y: -0.61}
       - {x: 0.099999994, y: -0.64}
       - {x: -0.099999994, y: -0.64}
+--- !u!95 &4798808790554995348
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295331342914432473}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ff123f6093fa3504297c0d5f903c5ebe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1295331342914432472
 MonoBehaviour:
   m_ObjectHideFlags: 0

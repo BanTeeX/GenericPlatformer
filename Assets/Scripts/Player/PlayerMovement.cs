@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 	private void FixedUpdate()
 	{
 		playerController.Move(horizontalVelocity);
-		if (jump)
+		if (jump == true)
 		{
 			playerController.Jump(jumpForce);
 			jump = false;

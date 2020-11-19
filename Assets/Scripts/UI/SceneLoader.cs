@@ -3,15 +3,24 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+	private int currentSceneIndex;
+
+	private void Start()
+	{
+		currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+	}
+
 	public void LoadNextScene()
 	{
-		int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-		SceneManager.LoadScene(currentSceneIndex + 1);
+		if (++currentSceneIndex >= SceneManager.sceneCountInBuildSettings)
+		{
+			currentSceneIndex = 0;
+		}
+		SceneManager.LoadScene(currentSceneIndex);
 	}
 
 	public void LoadCurrentScene()
 	{
-		int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 		SceneManager.LoadScene(currentSceneIndex);
 	}
 

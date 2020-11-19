@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1563907339014943251}
   - component: {fileID: 4974145968860078135}
   - component: {fileID: 6365651252264550651}
-  - component: {fileID: 649647426853712246}
   - component: {fileID: 5565412744066346146}
+  - component: {fileID: 649647426853712246}
   m_Layer: 10
   m_Name: GravityPad
   m_TagString: Untagged
@@ -110,19 +110,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 0.13}
   m_EdgeRadius: 0
---- !u!114 &649647426853712246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5898004176055292923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6c46bbfd18daf44d9515a2693977808, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 5565412744066346146}
 --- !u!82 &5565412744066346146
 AudioSource:
   m_ObjectHideFlags: 0
@@ -219,3 +206,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &649647426853712246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898004176055292923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c46bbfd18daf44d9515a2693977808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 5565412744066346146}

@@ -19,61 +19,34 @@ public class PlayerController : MonoBehaviour, IDestroyable, IGravityChangeable,
 	[SerializeField] private float jumpSpeedTolerance = 0.1f;
 	[SerializeField] private float fallSpeedTolerance = 0.1f;
 	[SerializeField] private float moveSpeedTolerance = 1.5f;
-	[SerializeField] SceneLoader sceneLoader;
+	[SerializeField] private SceneLoader sceneLoader;
+	[SerializeField] private AudioSource audioSource;
 
 	private Vector2 velocity = Vector2.zero;
 
 	private void FixedUpdate()
 	{
-		isGrounded = Physics2D.OverlapCircle(chceckGround.position, checkGroundRadius, whatIsGround);
-
-		if (_rigidbody.velocity.y > jumpSpeedTolerance)
-		{
-			isJumping = true;
-		}
-		else
-		{
-			isJumping = false;
-		}
-		if (_rigidbody.velocity.y < -fallSpeedTolerance)
-		{
-			isFalling = true;
-		}
-		else
-		{
-			isFalling = false;
-		}
-		if (Mathf.Abs(_rigidbody.velocity.x) > moveSpeedTolerance)
-		{
-			isMoving = true;
-			if (_rigidbody.velocity.x < 0 ^ isGravityInverted)
-			{
-				isFliped = true;
-			}
-			else
-			{
-				isFliped = false;
-			}
-		}
-		else
-		{
-			isMoving = false;
-		}
+		isGrounded = Physics2D.OverlapCircle(chceckGround.position, checkGroundRadius, whatIsGround) != null;
+		isJumping = _rigidbody.velocity.y > jumpSpeedTolerance;
+		isFalling = _rigidbody.velocity.y < -fallSpeedTolerance;
+		isMoving = Mathf.Abs(_rigidbody.velocity.x) > moveSpeedTolerance;
+		isFliped = _rigidbody.velocity.x < 0 ^ isGravityInverted;
 	}
 
 	public void Move(float speed)
 	{
-		if (isGrounded || airControl)
+		if (isGrounded == true || airControl == true)
 		{
-			Vector2 targetVelocity = new Vector2(isLocked ? 0.0f : speed, _rigidbody.velocity.y);
+			Vector2 targetVelocity = new Vector2(isLocked ? 0 : speed, _rigidbody.velocity.y);
 			_rigidbody.velocity = Vector2.SmoothDamp(_rigidbody.velocity, targetVelocity, ref velocity, moveSmooth);
 		}
 	}
 
 	public void Jump(float jumpForce)
 	{
-		if (isGrounded && !isLocked)
+		if (isGrounded == true && isLocked == false)
 		{
+			audioSource.Play();
 			_rigidbody.AddForce(new Vector2(0.0f, (isGravityInverted ? -1.0f : 1.0f) * jumpForce));
 		}
 	}

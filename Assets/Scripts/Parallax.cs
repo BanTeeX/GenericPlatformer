@@ -1,36 +1,35 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Parralax : MonoBehaviour
+public class Parallax : MonoBehaviour
 {
-    private float length, startpos, ypos;
-    public GameObject cam;
-    public float parallaxEffect;
+	[SerializeField] private GameObject cam;
+	[SerializeField] private float parallaxEffect;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        startpos = transform.position.x;
-        ypos = transform.position.y;
-        length = GetComponent<SpriteRenderer>().bounds.size.x;
-    }
+	private float length;
+	private float startpos;
+	private float ypos;
 
-    // Update is called once per frame
-    void Update()
-    {
-        float temp = (cam.transform.position.x * (1 - parallaxEffect));
-        float dist = (cam.transform.position.x * parallaxEffect);
-        float ydist = (cam.transform.position.y * parallaxEffect);
+	private void Start()
+	{
+		startpos = transform.position.x;
+		ypos = transform.position.y;
+		length = GetComponent<SpriteRenderer>().bounds.size.x;
+	}
 
-        transform.position = new Vector3(startpos + dist, ypos + ydist, transform.position.z);
-        if (temp > startpos + length)
-        {
-            startpos += length;
-        }
-        else if (temp < startpos - length)
-        {
-            startpos -= length;
-        }
-    }
+	private void Update()
+	{
+		float temp = (cam.transform.position.x * (1 - parallaxEffect));
+		float dist = (cam.transform.position.x * parallaxEffect);
+		float ydist = (cam.transform.position.y * parallaxEffect);
+
+		transform.position = new Vector3(startpos + dist, ypos + ydist, transform.position.z);
+		if (temp > startpos + length)
+		{
+			startpos += length;
+		}
+		else if (temp < startpos - length)
+		{
+			startpos -= length;
+		}
+	}
 }
